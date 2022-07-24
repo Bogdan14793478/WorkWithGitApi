@@ -55,7 +55,6 @@ export const SecondPage = () => {
     if (valueInput === "") {
       setReservRepos([]);
       setShowList(false);
-      console.log("hi");
     }
   }, [valueInput]);
 
