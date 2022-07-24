@@ -1,0 +1,16 @@
+.container {
+  padding: 0;
+  margin: 0;
+  display: block;
+  justify-content: center;
+}
+
+.page-name {
+  padding: 20px 0;
+  font-size: 24px;
+  margin-left: 42%;
+}
+
+.input-main-page {
+  margin-left: 350px;
+}
