@@ -13,6 +13,7 @@ const useStyles = makeStyles({
 
 export const InputMainPage: React.FC<InputMainPageProps> = ({
   setValueInput,
+  title,
 }) => {
   const classes = useStyles();
 
@@ -32,7 +33,7 @@ export const InputMainPage: React.FC<InputMainPageProps> = ({
   return (
     <div>
       <TextField
-        label="Search for user"
+        label={`Search for ${title}`}
         variant="standard"
         className={classes.inputMainPage}
         onChange={enterUser}

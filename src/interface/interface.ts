@@ -74,4 +74,5 @@ export interface UserForCard {
 
 export interface InputMainPageProps {
   setValueInput: Dispatch<SetStateAction<string | null>>;
+  title: string;
 }

@@ -1,5 +1,11 @@
 import { axiosInstance } from "./axios";
 
+// export async function findUserRepos(userName, nameRepo) {
+//   return await axiosInstance.get(
+//     `/search/users?q=${userName}/repos?q=${nameRepo}`
+//   );
+// }
+
 export async function getDataUser(user, page) {
   if (page > 1) {
     return await axiosInstance.get(`/search/users?q=${user}+page:%${page}`);

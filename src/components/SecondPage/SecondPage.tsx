@@ -51,7 +51,7 @@ export const SecondPage = () => {
   return (
     <div>
       <OutlinedCard item={findUser} />
-      <InputMainPage setValueInput={setValueInput} />
+      <InputMainPage setValueInput={setValueInput} title="repo" />
       {findRepos?.map((item: any) => (
         <BasicCard item={item} key={item.id} />
       ))}

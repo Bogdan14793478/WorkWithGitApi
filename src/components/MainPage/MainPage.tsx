@@ -64,7 +64,7 @@ export const MainPage = () => {
     <div>
       <div className="container">
         <div className="page-name">GitHub Searcher</div>
-        <InputMainPage setValueInput={setValueInput} />
+        <InputMainPage setValueInput={setValueInput} title="user" />
         {findUsers.map((item) => (
           <OutlinedCard key={item?.id} item={item} userId={item.id} />
         ))}
