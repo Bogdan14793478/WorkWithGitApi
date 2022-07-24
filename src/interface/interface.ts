@@ -19,7 +19,6 @@ export interface User {
   subscriptions_url: string;
   type: string;
   url: string;
-  // ----- копии вынести и расширить
   name?: string;
   following?: string;
   bio?: string;
@@ -62,7 +61,6 @@ export interface PersonalInfo {
   type: string;
   updated_at: string;
   url: string;
-  // ----- копии вынести и расширить
   score?: number;
   avatar_url: string;
 }
