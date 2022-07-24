@@ -7,7 +7,7 @@ export const axiosInstance = axios.create({
   responseType: "json",
 });
 
-const myToken = "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";
+const myToken = "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";
 
 axiosInstance.interceptors.request.use((request) => {
   if (myToken != null && request.headers) {

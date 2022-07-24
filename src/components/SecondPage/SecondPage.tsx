@@ -9,7 +9,9 @@ import { PersonalInfo } from "../../interface/interface";
 export const SecondPage = () => {
   const [findUser, setFindUser] = useState<PersonalInfo>();
   const [findRepos, setFindRepos] = useState([]);
+  const [reservRepos, setReservRepos] = useState([]);
   const [valueInput, setValueInput] = useState<string | null>(null);
+  const [showList, setShowList] = useState(false);
   const { user } = useParams();
 
   async function findRepo() {
@@ -36,7 +38,8 @@ export const SecondPage = () => {
         }
       });
     }
-    setFindRepos(searchRepo);
+    setShowList(true);
+    setReservRepos(searchRepo);
   };
 
   useEffect(() => {
@@ -45,16 +48,28 @@ export const SecondPage = () => {
   }, []);
 
   useEffect(() => {
-    fileredRepo();
+    console.log(valueInput, "valueInput");
+    if (valueInput) {
+      fileredRepo();
+    }
+    if (valueInput === "") {
+      setReservRepos([]);
+      setShowList(false);
+      console.log("hi");
+    }
   }, [valueInput]);
 
   return (
     <div>
       <OutlinedCard item={findUser} />
       <InputMainPage setValueInput={setValueInput} title="repo" />
-      {findRepos?.map((item: any) => (
-        <BasicCard item={item} key={item.id} />
-      ))}
+      {showList
+        ? reservRepos?.map((item: any) => (
+            <BasicCard item={item} key={item.id} />
+          ))
+        : findRepos?.map((item: any) => (
+            <BasicCard item={item} key={item.id} />
+          ))}
     </div>
   );
 };
